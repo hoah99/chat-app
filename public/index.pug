@@ -1,0 +1,17 @@
+extends ./layout
+block content
+    .mt-4.app-container.login-container 
+        h3.text-center WELCOME TO CHAT APP
+        form.log-in-form(action="/chat")
+            .text-center.mb-4
+                label.form-label.username-label(for="username") Username
+                input.form-control(type="text" id="username" name="username" required)
+            .text-center.mb-4
+                label.form-label.group-name-label(for="room") Group Name
+                select.form-select.form-select-lg.form-control(id="room" name="room" style="padding: 10px 16px; border-radius: 30px;" required)
+                    option(value="" disabled selected) Select Group
+                    option(value="software") Software 
+                    option(value="hardware") Hardware
+                    option(value="firmware") Firmware
+            button.btn-log-in(type="submit") Submit
+

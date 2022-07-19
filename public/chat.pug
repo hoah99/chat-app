@@ -1,0 +1,54 @@
+extends ./layout
+block content
+    .mt-4.app-container
+        .d-flex.justify-content-between.align-items-center
+            h3 CHAT APP
+            a(href="/" id="btn-leave") Leave room
+        .chat-main.mt-4 
+            .row 
+                .col-lg-4.content-left(id='content-left')
+                    .group 
+                        h4.text-center GROUP
+                        h5.text-center(id='room-name')
+                    .users
+                        h4.text-center(id='user-count')
+                        ul.user-list(id='users-list')
+                            //- li.user-item
+                            //-     .d-flex.align-items-center
+                            //-         img.user-avatar(src='https://cdn.dribbble.com/users/1355613/screenshots/15252730/media/28f348daf9654c440f5dcf398d8e097a.jpg?compress=1&resize=1000x750&vertical=top')
+                            //-         .user-info 
+                            //-             span.user-name John
+                            //- li.user-item
+                            //-     .d-flex.align-items-center
+                            //-         img.user-avatar(src='https://cdn.dribbble.com/users/1355613/screenshots/15252730/media/28f348daf9654c440f5dcf398d8e097a.jpg?compress=1&resize=1000x750&vertical=top')
+                            //-         .user-info 
+                            //-             span.user-name John
+                            //- li.user-item
+                            //-     .d-flex.align-items-center
+                            //-         img.user-avatar(src='https://cdn.dribbble.com/users/1355613/screenshots/15252730/media/28f348daf9654c440f5dcf398d8e097a.jpg?compress=1&resize=1000x750&vertical=top')
+                            //-         .user-info 
+                            //-             span.user-name John
+                            //- li.user-item
+                            //-     .d-flex.align-items-center
+                            //-         img.user-avatar(src='https://cdn.dribbble.com/users/1355613/screenshots/15252730/media/28f348daf9654c440f5dcf398d8e097a.jpg?compress=1&resize=1000x750&vertical=top')
+                            //-         .user-info 
+                            //-             span.user-name John
+                .col-lg-8
+                    .group-chat
+                        .chat-view
+                            .chat-message 
+                                .message.d-flex.align-items-start
+                                    .user-message 
+                                        img.user-avatar(src='https://cdn.dribbble.com/users/1355613/screenshots/15252730/media/28f348daf9654c440f5dcf398d8e097a.jpg?compress=1&resize=1000x750&vertical=top')
+                                        span.time-message 9:00 am
+                                    p.message-text This is example message!!!
+                                .my-message.d-flex.flex-column.align-items-end
+                                    p.message-text This is example message!!! This is example message!!! This is example message!!! This is example message!!!
+                                    span.time-message 9:00 am
+                        form.form-message.d-flex.align-center(name="form-message")          
+                            input.input-message(type="text" name="message" placeholder="Enter message..." required)
+                            button.btn-send-message
+                                <i class="fa-solid fa-location-arrow fa-xl" style="color: white;"></i>
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.11.0/qs.min.js" integrity="sha512-/l6vieC+YxaZywUhmqs++8uF9DeMvJE61ua5g+UK0TuHZ4TkTgB1Gm1n0NiA86uEOM9JJ6JUwyR0hboKO0fCng==" crossorigin="anonymous" referrerpolicy="no-referrer")
+    script(src='/socket.io/socket.io.js')
+    script(src='./js/main.js')
